@@ -1,36 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import '../stylesheets/navbar.css';
 
-class Navbar extends Component {
+class Navigation extends Component {
     renderContent() {
         switch (this.props.auth) {
             case null:
                 return;
             case false:
                 return (
-                    <li>
-                        <a href="/auth/google">Log In With Google</a>
-                    </li>
+                    <NavItem href='/auth/google'>Log In</NavItem>
                 );
             default:
                 return (
-                    <li>
-                        <a href="/api/logout">Log Out</a>
-                    </li>
+                    <NavItem href='/api/logout'>Log Out</NavItem>
                 );
+        }
+    }
+
+    renderLogo() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return <a href='/'>Trip Planner</a>
+            default:
+                return <a href='/home'>Trip Planner</a>
         }
     }
 
     render() {
         return (
-            <nav>
-                <div className="nav-wrapper">
-                    <a href="/" className="left brand-logo">Logo</a>
-                    <ul className="right">
-                        {this.renderContent()}
-                    </ul>
-                </div>
-            </nav>
+            <Navbar inverse>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        {this.renderLogo()}
+                    </Navbar.Brand>
+                </Navbar.Header>
+                <Nav pullRight>
+                    {this.renderContent()}
+                </Nav>
+            </Navbar>
         );
     }
 }
@@ -39,4 +50,4 @@ function mapStateToProps({ auth }) {
     return { auth };
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Navigation);

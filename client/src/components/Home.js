@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../stylesheets/home.css';
 
 const Home = () => {
     return (
-        <div style={{ textAlign: 'center' }}>
-            <h1> Home Page</h1>
+        <div id='home-page'>
+            <div>
+                <Link to='/trips'>
+                    <div className='home-option' id='plan-option'>Plan</div>
+                </Link>
+                <Link to='/trips'>
+                    <div className='home-option' id='remember-option'>Remember</div>
+                </Link>
+            </div>
         </div>
     )
 }

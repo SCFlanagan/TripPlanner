@@ -1,0 +1,34 @@
+#home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-option {
+    width: 400px;
+    border: .1px solid slategray;
+    color: slategray;
+    padding: 130px 100px;
+    text-align: center;
+    display: inline-block;
+    font-size: 3em;
+    margin: 20px;
+}
+
+.home-option:hover {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px slategray;
+}
+
+#plan-option:hover {
+    background-image: url('https://images.pexels.com/photos/408503/pexels-photo-408503.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb');
+    background-size: cover;
+    background-position: center;
+}
+#remember-option:hover {
+    background-image: url('https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb');
+    background-size: cover;
+    background-position: center;
+}

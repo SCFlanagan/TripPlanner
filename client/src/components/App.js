@@ -6,6 +6,11 @@ import * as actions from '../actions';
 import Navbar from './Navbar';
 import Landing from './Landing';
 import Home from './Home';
+import Login from './Login';
+import TripDashboard from './TripDashboard';
+import CreateTrip from './CreateTrip';
+
+import '../stylesheets/style.css';
 
 class App extends Component {
     componentDidMount() {
@@ -14,15 +19,18 @@ class App extends Component {
     
     render() {
         return (
-            <div>
-                <Navbar />
-                <BrowserRouter>
-                    <div className='container'>
+            <BrowserRouter>
+                <div>
+                    <Navbar />
                         <Route exact path='/' component={Landing}></Route>
                         <Route exact path='/home' component={Home}></Route>
+                    <div className='inner-pages'>
+                        <Route exact path='/login' component={Login}></Route>
+                        <Route exact path='/trips' component={TripDashboard}></Route>
+                        <Route path='/trips/new' component={CreateTrip}></Route>
                     </div>
-                </BrowserRouter>
-            </div>
+                </div>
+            </BrowserRouter>
         );
     }
 }
