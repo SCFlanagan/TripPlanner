@@ -9,6 +9,7 @@ import Home from './Home';
 import Login from './Login';
 import TripDashboard from './TripDashboard';
 import CreateTrip from './CreateTrip';
+import Trip from './Trip';
 
 import '../stylesheets/style.css';
 
@@ -28,6 +29,7 @@ class App extends Component {
                         <Route exact path='/login' component={Login}></Route>
                         <Route exact path='/trips' component={TripDashboard}></Route>
                         <Route path='/trips/new' component={CreateTrip}></Route>
+                        <Route exact path='/trip' component={Trip}></Route>
                     </div>
                 </div>
             </BrowserRouter>

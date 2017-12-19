@@ -25,3 +25,16 @@
     width: 30%;
     border: 1px solid black;
 }
+
+#loc-input {
+    width: 40%;
+    margin: 15px;
+}
+
+#map {
+    height: 60vh;
+    width: 90%;
+    margin: 20px auto;
+}
+
+
